@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @company.name
+p
+  strong Description:
+  = @company.description
+p
+  strong Website:
+  = @company.website
+p
+  strong Company size:
+  = @company.company_size
+p
+  strong Timezone:
+  = @company.timezone
+p
+  strong Category:
+  = @company.category
+p
+  strong Internal note:
+  = @company.internal_note
+p
+  strong User:
+  = @company.user
+
+=> link_to 'Edit', edit_company_path(@company)
+'|
+=< link_to 'Back', companies_path
