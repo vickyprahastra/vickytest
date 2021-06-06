@@ -1,10 +1,10 @@
-version: "3.9"
+version: "3.3"
 services:
   db:
     image: postgres:11.1-alpine
   web:
     build: .
-    command: bin/rails s -p 3000 -b '0.0.0.0'
+    command: bin/rails s -e production -p 3000 -b '0.0.0.0'
     volumes:
       - .:/usr/src/app
     ports:
