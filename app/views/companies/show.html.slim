@@ -23,7 +23,7 @@ p
   = @company.internal_note
 p
   strong User:
-  = @company.user
+  = @company.user.email
 
 => link_to 'Edit', edit_company_path(@company)
 '|
