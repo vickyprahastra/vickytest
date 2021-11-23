@@ -1,5 +1,11 @@
 # README
 
+Install
+
+1. Git Clone
+2. Rename Project Directory
+3. Rename database 
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
