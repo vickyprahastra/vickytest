@@ -1,0 +1,85 @@
+    /! App badge section
+    section#download.bg-gradient-primary-to-secondary
+      .container.px-5
+        h2.text-center.text-white.font-alt.mb-4 Get the app now!
+        .d-flex.flex-column.flex-lg-row.align-items-center.justify-content-center
+          a.me-lg-3.mb-4.mb-lg-0 href="#!"
+            = image_pack_tag 'media/images/google-play-badge.svg', class: 'app-badge', alt: '...'
+          a href="#!"
+            = image_pack_tag 'media/images/app-store-badge.svg', class: 'app-badge', alt: '...'
+    /! Footer
+    footer.bg-black.text-center.py-5
+      .container.px-5
+        .text-white-50.small
+          .mb-2 &copy; Your Website 2022. All Rights Reserved.
+          a href="#!"  Privacy
+          span.mx-1 &middot;
+          a href="#!"  Terms
+          span.mx-1 &middot;
+          a href="#!"  FAQ
+    /! Feedback Modal
+    #feedbackModal.modal.fade aria-hidden="true" aria-labelledby="feedbackModalLabel" tabindex="-1"
+      .modal-dialog.modal-dialog-centered
+        .modal-content
+          .modal-header.bg-gradient-primary-to-secondary.p-4
+            h5#feedbackModalLabel.modal-title.font-alt.text-white Send feedback
+            button.btn-close.btn-close-white aria-label="Close" data-bs-dismiss="modal" type="button"
+          .modal-body.border-0.p-4
+            /! * * * * * * * * * * * * * * *
+            /! * * SB Forms Contact Form * *
+            /! * * * * * * * * * * * * * * *
+            /! This form is pre-integrated with SB Forms.
+            /! To make this form functional, sign up at
+            /! https://startbootstrap.com/solution/contact-forms
+            /! to get an API token!
+            form#contactForm data-sb-form-api-token="API_TOKEN"
+              /! Name input
+              .form-floating.mb-3
+                input#name.form-control data-sb-validations="required" placeholder=("Enter your name...") type="text" /
+                label for="name"  Full name
+                .invalid-feedback data-sb-feedback="name:required"  A name is required.
+              /! Email address input
+              .form-floating.mb-3
+                input#email.form-control data-sb-validations="required,email" placeholder="name@example.com" type="email" /
+                label for="email"  Email address
+                .invalid-feedback data-sb-feedback="email:required"  An email is required.
+                .invalid-feedback data-sb-feedback="email:email"  Email is not valid.
+              /! Phone number input
+              .form-floating.mb-3
+                input#phone.form-control data-sb-validations="required" placeholder=("(123) 456-7890") type="tel" /
+                label for="phone"  Phone number
+                .invalid-feedback data-sb-feedback="phone:required"  A phone number is required.
+              /! Message input
+              .form-floating.mb-3
+                textarea#message.form-control data-sb-validations="required" placeholder=("Enter your message here...") style=("height: 10rem") type="text"
+                label for="message"  Message
+                .invalid-feedback data-sb-feedback="message:required"  A message is required.
+              /! Submit success message
+              /!
+              /! This is what your users will see when the form
+              /! has successfully submitted
+              #submitSuccessMessage.d-none
+                .text-center.mb-3
+                  .fw-bolder Form submission successful!
+                  | To activate this form, sign up at
+                  br/
+                  a href="https://startbootstrap.com/solution/contact-forms"  https://startbootstrap.com/solution/contact-forms
+              /! Submit error message
+              /!
+              /! This is what your users will see when there is
+              /! an error submitting the form
+              #submitErrorMessage.d-none
+                .text-center.text-danger.mb-3 Error sending message!
+              /! Submit Button
+              .d-grid
+                button#submitButton.btn.btn-primary.rounded-pill.btn-lg.disabled type="submit"  Submit
+    /! Bootstrap core JS
+    script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    /! Core theme JS
+    script src="js/scripts.js"
+    /! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    /! * *                               SB Forms JS                               * *
+    /! * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
+    /! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    script src="https://cdn.startbootstrap.com/sb-forms-latest.js"
+              a href="https://templatemo.com" rel="nofollow" title=("free CSS templates")  TemplateMo
