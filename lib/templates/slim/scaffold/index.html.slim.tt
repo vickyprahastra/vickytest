@@ -22,4 +22,5 @@ table.table
 
 br
 
-= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, class: 'btn btn-primary'
+.float-end
+  = link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, class: 'btn btn-primary'
