@@ -1,0 +1,16 @@
+.d-flex.flex-column.flex-lg-row.align-items-center.justify-content-center
+  .p-3
+    h2.text-center.py-3 Login
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-outline.mb-4
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email address'
+      .form-outline.mb-4
+        = f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Password'
+      - if devise_mapping.rememberable?
+        .field.checkbox.mb-3.text-center
+          label
+            = f.check_box :remember_me
+            |  Remember me
+      .actions.mb-3
+        = f.submit "Log in", class: 'w-100 btn btn-primary'
+    = render "devise/shared/links"
