@@ -4,4 +4,4 @@ require_relative 'application'
 # Initialize the Rails application.
 Rails.application.initialize!
 
-ENV['application_name'] = 'Plaza Base'
+ENV['application_name'] = 'Vicky Test'
