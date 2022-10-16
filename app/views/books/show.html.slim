@@ -11,7 +11,7 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Images urls
   .col-sm-10
-    .form-control readonly='readonly' = @book.images_urls
+    .form-control readonly='readonly' = excerpt(@book.images_urls&.to_s, '', radius: 200)
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Year
   .col-sm-10
@@ -43,7 +43,7 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Wikipedia
   .col-sm-10
-    .form-control readonly='readonly' = @book.wikipedia
+    .form-control readonly='readonly' = link_to @book.wikipedia.dig('url'), @book.wikipedia.dig('url')
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Average rating
   .col-sm-10
@@ -51,7 +51,7 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Goodreads
   .col-sm-10
-    .form-control readonly='readonly' = @book.goodreads
+    .form-control readonly='readonly' = link_to @book.goodreads.dig('url'), @book.goodreads.dig('url')
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Similar books
   .col-sm-10
@@ -59,7 +59,7 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Description
   .col-sm-10
-    .form-control readonly='readonly' = @book.description
+    .form-control readonly='readonly' = raw @book.description
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Loc class
   .col-sm-10
@@ -67,7 +67,7 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Gutenberg
   .col-sm-10
-    .form-control readonly='readonly' = @book.gutenberg
+    .form-control readonly='readonly' = link_to @book.gutenberg.dig('url'), @book.gutenberg.dig('url')
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Authors
   .col-sm-10

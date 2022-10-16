@@ -1,3 +1,5 @@
+.float-end
+  = link_to 'New Book', new_book_path, class: 'btn btn-primary'
 h1 Listing books
 
 .table-responsive
@@ -72,5 +74,5 @@ h1 Listing books
 
 br
 
-.float-end
-  = link_to 'New Book', new_book_path, class: 'btn btn-primary'
+
+= paginate @books

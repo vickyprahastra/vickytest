@@ -3,7 +3,7 @@ class AuthorsController < ApplicationController
 
   # GET /authors or /authors.json
   def index
-    @authors = Author.all
+    @authors = Author.all.order(:created_at).page(params[:page]).per(10)
   end
 
   # GET /authors/1 or /authors/1.json

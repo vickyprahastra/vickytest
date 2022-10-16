@@ -35,6 +35,9 @@ gem "mini_magick"
 
 gem 'devise'
 gem "slim-rails"
+gem 'kaminari'
+gem 'bootstrap5-kaminari-views'
+gem 'jsonb_accessor', github: 'vickyprahastra/jsonb_accessor'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

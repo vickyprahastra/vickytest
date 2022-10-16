@@ -1,3 +1,5 @@
+.float-end
+  = link_to 'New Author', new_author_path, class: 'btn btn-primary'
 h1 Listing authors
 
 .table-responsive
@@ -37,5 +39,4 @@ h1 Listing authors
 
 br
 
-.float-end
-  = link_to 'New Author', new_author_path, class: 'btn btn-primary'
+= paginate @authors
