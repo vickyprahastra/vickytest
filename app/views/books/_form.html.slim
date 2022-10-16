@@ -1,0 +1,92 @@
+= form_for @book do |f|
+  - if @book.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@book.errors.count, "error")} prohibited this book from being saved:"
+      ul
+        - @book.errors.full_messages.each do |message|
+          li = message
+
+  .field.mb-3
+    = f.label :content_name, class: 'form-label'
+    = f.text_field :content_name, class: 'form-control'
+  .field.mb-3
+    = f.label :author_name, class: 'form-label'
+    = f.text_field :author_name, class: 'form-control'
+  .field.mb-3
+    = f.label :images_urls, class: 'form-label'
+    = f.text_field :images_urls, class: 'form-control'
+  .field.mb-3
+    = f.label :year, class: 'form-label'
+    = f.number_field :year, class: 'form-control'
+  .field.mb-3
+    = f.label :images, class: 'form-label'
+    = f.text_field :images, class: 'form-control'
+  .field.mb-3
+    = f.label :int_id, class: 'form-label'
+    = f.number_field :int_id, class: 'form-control'
+  .field.mb-3
+    = f.label :category, class: 'form-label'
+    = f.text_field :category, class: 'form-control'
+  .field.mb-3
+    = f.label :genres, class: 'form-label'
+    = f.text_field :genres, class: 'form-control'
+  .field.mb-3
+    = f.label :copyright, class: 'form-label'
+    = f.text_field :copyright, class: 'form-control'
+  .field.mb-3
+    = f.label :title, class: 'form-label'
+    = f.text_field :title, class: 'form-control'
+  .field.mb-3
+    = f.label :wikipedia, class: 'form-label'
+    = f.text_field :wikipedia, class: 'form-control'
+  .field.mb-3
+    = f.label :average_rating, class: 'form-label'
+    = f.text_field :average_rating, class: 'form-control'
+  .field.mb-3
+    = f.label :goodreads, class: 'form-label'
+    = f.text_field :goodreads, class: 'form-control'
+  .field.mb-3
+    = f.label :similar_books, class: 'form-label'
+    = f.text_field :similar_books, class: 'form-control'
+  .field.mb-3
+    = f.label :description, class: 'form-label'
+    = f.text_field :description, class: 'form-control'
+  .field.mb-3
+    = f.label :loc_class, class: 'form-label'
+    = f.text_field :loc_class, class: 'form-control'
+  .field.mb-3
+    = f.label :gutenberg, class: 'form-label'
+    = f.text_field :gutenberg, class: 'form-control'
+  .field.mb-3
+    = f.label :authors, class: 'form-label'
+    = f.text_field :authors, class: 'form-control'
+  .field.mb-3
+    = f.label :language, class: 'form-label'
+    = f.text_field :language, class: 'form-control'
+  .field.mb-3
+    = f.label :countries, class: 'form-label'
+    = f.text_field :countries, class: 'form-control'
+  .field.mb-3
+    = f.label :release_date, class: 'form-label'
+    div
+      = f.datetime_select :release_date, class: 'form-control'
+  .field.mb-3
+    = f.label :author, class: 'form-label'
+    = f.number_field :author, class: 'form-control'
+  .field.mb-3
+    = f.label :cover, class: 'form-label'
+    = f.text_field :cover, class: 'form-control'
+  .field.mb-3.form-check
+    = f.label :content_cleaned, class: 'form-check-label'
+    = f.check_box :content_cleaned, class: 'form-check-input'
+  .field.mb-3
+    = f.label :classes, class: 'form-label'
+    = f.text_field :classes, class: 'form-control'
+  .field.mb-3.form-check
+    = f.label :content_available, class: 'form-check-label'
+    = f.check_box :content_available, class: 'form-check-input'
+  .field.mb-3
+    = f.label :n_authors, class: 'form-label'
+    = f.number_field :n_authors, class: 'form-control'
+  .actions.mb-3
+    = f.submit 'Submit', class: 'btn btn-primary float-end'

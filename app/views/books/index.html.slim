@@ -1,0 +1,75 @@
+h1 Listing books
+
+.table-responsive
+  table.table
+    thead
+      tr
+            th Content
+            th Author
+            /th Images urls
+            th Year
+            /th Images
+            /th ID
+            th Category
+            th Genres
+            th Copyright
+            th Title
+            /th Wikipedia
+            th Rating
+            /th Goodreads
+            /th Similar books
+            th Description
+            /th Loc class
+            /th Gutenberg
+            /th Authors
+            th Language
+            th Countries
+            th Release date
+            /th Author
+            th Cover
+            /th Content cleaned
+            /th Classes
+            /th Content available
+            /th N authors
+            th
+            th
+            th
+
+    tbody
+      - @books.each do |book|
+        tr
+            td = book.content_name
+            td = book.author_name
+            /td = book.images_urls
+            td = book.year
+            /td = book.images
+            /td = book.int_id
+            td = book.category
+            td = book.genres
+            td = book.copyright
+            td = book.title
+            /td = book.wikipedia
+            td = book.average_rating
+            /td = book.goodreads
+            /td = book.similar_books
+            td = excerpt(book.description, '', radius: 30)
+            /td = book.loc_class
+            /td = book.gutenberg
+            /td = book.authors
+            td = book.language
+            td = book.countries
+            td = book.release_date
+            /td = book.author
+            td = book.cover
+            /td = book.content_cleaned
+            /td = book.classes
+            /td = book.content_available
+            /td = book.n_authors
+            td = link_to 'Show', book
+            td = link_to 'Edit', edit_book_path(book)
+            td = link_to 'Destroy', book, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+.float-end
+  = link_to 'New Book', new_book_path, class: 'btn btn-primary'

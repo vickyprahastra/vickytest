@@ -29,6 +29,9 @@ html lang="en"
           ul.navbar-nav.ms-auto.me-4.my-3.my-lg-0
             li.nav-item
               - if user_signed_in?
+                = link_to 'Books', books_path, class: 'nav-link me-lg-3'
+            li.nav-item
+              - if user_signed_in?
                 = link_to 'Logout', destroy_user_session_path(:authenticity_token => form_authenticity_token()), method: :delete, class: 'nav-link me-lg-3'
               - else
                 = link_to 'Login', new_user_session_path, class: 'nav-link me-lg-3'

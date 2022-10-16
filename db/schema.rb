@@ -10,11 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_03_163528) do
+ActiveRecord::Schema.define(version: 2022_10_16_063604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "books", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "content_name"
+    t.string "author_name"
+    t.jsonb "images_urls", default: []
+    t.integer "year"
+    t.jsonb "images", default: []
+    t.integer "int_id"
+    t.string "category"
+    t.jsonb "genres", default: []
+    t.string "copyright"
+    t.string "title"
+    t.jsonb "wikipedia", default: {}
+    t.float "average_rating"
+    t.jsonb "goodreads", default: {}
+    t.jsonb "similar_books", default: []
+    t.string "description"
+    t.string "loc_class"
+    t.jsonb "gutenberg", default: {}
+    t.jsonb "authors", default: []
+    t.string "language"
+    t.jsonb "countries", default: []
+    t.datetime "release_date"
+    t.integer "author"
+    t.string "cover"
+    t.boolean "content_cleaned", default: false
+    t.jsonb "classes", default: []
+    t.boolean "content_available", default: false
+    t.integer "n_authors"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "companies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"

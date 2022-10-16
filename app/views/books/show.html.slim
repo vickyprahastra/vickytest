@@ -1,0 +1,114 @@
+p#notice = notice
+
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Content name
+  .col-sm-10
+    .form-control readonly='readonly' = @book.content_name
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Author name
+  .col-sm-10
+    .form-control readonly='readonly' = @book.author_name
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Images urls
+  .col-sm-10
+    .form-control readonly='readonly' = @book.images_urls
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Year
+  .col-sm-10
+    .form-control readonly='readonly' = @book.year
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Images
+  .col-sm-10
+    .form-control readonly='readonly' = @book.images
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Int
+  .col-sm-10
+    .form-control readonly='readonly' = @book.int_id
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Category
+  .col-sm-10
+    .form-control readonly='readonly' = @book.category
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Genres
+  .col-sm-10
+    .form-control readonly='readonly' = @book.genres
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Copyright
+  .col-sm-10
+    .form-control readonly='readonly' = @book.copyright
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Title
+  .col-sm-10
+    .form-control readonly='readonly' = @book.title
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Wikipedia
+  .col-sm-10
+    .form-control readonly='readonly' = @book.wikipedia
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Average rating
+  .col-sm-10
+    .form-control readonly='readonly' = @book.average_rating
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Goodreads
+  .col-sm-10
+    .form-control readonly='readonly' = @book.goodreads
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Similar books
+  .col-sm-10
+    .form-control readonly='readonly' = @book.similar_books
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Description
+  .col-sm-10
+    .form-control readonly='readonly' = @book.description
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Loc class
+  .col-sm-10
+    .form-control readonly='readonly' = @book.loc_class
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Gutenberg
+  .col-sm-10
+    .form-control readonly='readonly' = @book.gutenberg
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Authors
+  .col-sm-10
+    .form-control readonly='readonly' = @book.authors
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Language
+  .col-sm-10
+    .form-control readonly='readonly' = @book.language
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Countries
+  .col-sm-10
+    .form-control readonly='readonly' = @book.countries
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Release date
+  .col-sm-10
+    .form-control readonly='readonly' = @book.release_date
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Author
+  .col-sm-10
+    .form-control readonly='readonly' = @book.author
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Cover
+  .col-sm-10
+    .form-control readonly='readonly' = @book.cover
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Content cleaned
+  .col-sm-10
+    .form-control readonly='readonly' = @book.content_cleaned
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Classes
+  .col-sm-10
+    .form-control readonly='readonly' = @book.classes
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Content available
+  .col-sm-10
+    .form-control readonly='readonly' = @book.content_available
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 N authors
+  .col-sm-10
+    .form-control readonly='readonly' = @book.n_authors
+
+.float-end
+  => link_to 'Back', books_path, class: 'btn btn-secondary'
+  =< link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary'

@@ -22,58 +22,6 @@ html lang="en"
     = render 'layouts/navigation'
     /! App features section
     section#features.mt-5
-      .container.px-5
+      div class="#{['authors', 'books'].include?(controller_name) and action_name == 'index' ? 'container-fluid' : 'container'}"
         = yield
-        /.row.gx-5.align-items-center
-          .col-lg-8.order-lg-1.mb-5.mb-lg-0
-            .container-fluid.px-5
-              .row.gx-5
-                .col-md-6.mb-5
-                  /! Feature item
-                  .text-center
-                    i.bi-phone.icon-feature.text-gradient.d-block.mb-3
-                    h3.font-alt Device Mockups
-                    p.text-muted.mb-0 Ready to use HTML/CSS device mockups, no Photoshop required!
-                .col-md-6.mb-5
-                  /! Feature item
-                  .text-center
-                    i.bi-camera.icon-feature.text-gradient.d-block.mb-3
-                    h3.font-alt Flexible Use
-                    p.text-muted.mb-0 Put an image, video, animation, or anything else in the screen!
-              .row
-                .col-md-6.mb-5.mb-md-0
-                  /! Feature item
-                  .text-center
-                    i.bi-gift.icon-feature.text-gradient.d-block.mb-3
-                    h3.font-alt Free to Use
-                    p.text-muted.mb-0 As always, this theme is free to download and use for any purpose!
-                .col-md-6
-                  /! Feature item
-                  .text-center
-                    i.bi-patch-check.icon-feature.text-gradient.d-block.mb-3
-                    h3.font-alt Open Source
-                    p.text-muted.mb-0 Since this theme is MIT licensed, you can use it commercially!
-          .col-lg-4.order-lg-0
-            /! Features section device mockup
-            .features-device-mockup
-              svg.circle viewbox=("0 0 100 100") xmlns="http://www.w3.org/2000/svg"
-                defs
-                  lineargradient#circleGradient gradienttransform="rotate(45)"
-                    stop.gradient-start-color offset="0%"
-                    stop.gradient-end-color offset="100%"
-                circle cx="50" cy="50" r="50"
-              svg.shape-1.d-none.d-sm-block viewbox=("0 0 240.83 240.83") xmlns="http://www.w3.org/2000/svg"
-                rect height="84.05" rx="42.03" transform=("translate(120.42 -49.88) rotate(45)") width="305.92" x="-32.54" y="78.39"
-                rect height="84.05" rx="42.03" transform=("translate(-49.88 120.42) rotate(-45)") width="305.92" x="-32.54" y="78.39"
-              svg.shape-2.d-none.d-sm-block viewbox=("0 0 100 100") xmlns="http://www.w3.org/2000/svg"
-                circle cx="50" cy="50" r="50"
-              .device-wrapper
-                .device data-color="black" data-device="iPhoneX" data-orientation="portrait"
-                  .screen.bg-black
-                    /! PUT CONTENTS HERE:
-                    /! * * This can be a video, image, or just about anything else.
-                    /! * * Set the max width of your media to 100% and the height to
-                    /! * * 100% like the demo example below.
-                    video autoplay="" loop="" muted="muted" style=("max-width: 100%; height: 100%")
-                      source src="#{ asset_pack_path 'media/images/demo-screen.mp4' }" type="video/mp4" /
     = render 'layouts/footer'
