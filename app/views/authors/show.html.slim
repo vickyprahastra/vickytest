@@ -1,0 +1,46 @@
+p#notice = notice
+
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Name
+  .col-sm-10
+    .form-control readonly='readonly' = @author.name
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Countries
+  .col-sm-10
+    .form-control readonly='readonly' = @author.countries
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Gender
+  .col-sm-10
+    .form-control readonly='readonly' = @author.gender
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Wikipedia
+  .col-sm-10
+    .form-control readonly='readonly' = @author.wikipedia
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 N books
+  .col-sm-10
+    .form-control readonly='readonly' = @author.n_books
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Summary
+  .col-sm-10
+    .form-control readonly='readonly' = @author.summary
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Born
+  .col-sm-10
+    .form-control readonly='readonly' = @author.born
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Books
+  .col-sm-10
+    .form-control readonly='readonly' = @author.books
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Int
+  .col-sm-10
+    .form-control readonly='readonly' = @author.int_id
+.field.mb-3.row
+  strong.col-form-label.col-sm-2 Died
+  .col-sm-10
+    .form-control readonly='readonly' = @author.died
+
+.float-end
+  => link_to 'Back', authors_path, class: 'btn btn-secondary'
+  =< link_to 'Edit', edit_author_path(@author), class: 'btn btn-primary'

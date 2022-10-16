@@ -1,0 +1,41 @@
+h1 Listing authors
+
+.table-responsive
+  table.table
+    thead
+      tr
+          th Name
+          th Countries
+          th Gender
+          th Wikipedia
+          th N books
+          th Summary
+          th Born
+          th Books
+          th Int
+          th Died
+          th
+        th
+        th
+
+    tbody
+      - @authors.each do |author|
+        tr
+            td = author.name
+            td = author.countries
+            td = author.gender
+            td = author.wikipedia
+            td = author.n_books
+            td = author.summary
+            td = author.born
+            td = author.books
+            td = author.int_id
+            td = author.died
+            td = link_to 'Show', author
+          td = link_to 'Edit', edit_author_path(author)
+          td = link_to 'Destroy', author, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+.float-end
+  = link_to 'New Author', new_author_path, class: 'btn btn-primary'

@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  countries: 
+  gender: 1
+  wikipedia: 
+  n_books: 1
+  summary: MyString
+  born: 2022-10-16 18:03:27
+  books: 
+  int_id: 1
+  died: 2022-10-16 18:03:27
+
+two:
+  name: MyString
+  countries: 
+  gender: 1
+  wikipedia: 
+  n_books: 1
+  summary: MyString
+  born: 2022-10-16 18:03:27
+  books: 
+  int_id: 1
+  died: 2022-10-16 18:03:27
