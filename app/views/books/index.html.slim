@@ -4,13 +4,13 @@ h1 Listing books
   table.table
     thead
       tr
+            th ID
             th Cover
             /th Content
             th Author
             /th Images urls
             th Year
             /th Images
-            /th ID
             /th Category
             /th Genres
             th Copyright
@@ -26,7 +26,7 @@ h1 Listing books
             th Language
             /th Countries
             th style="width:150px;" Release date
-            /th Author
+            th Author
             /th Content cleaned
             /th Classes
             /th Content available
@@ -38,6 +38,7 @@ h1 Listing books
     tbody
       - @books.each do |book|
         tr
+            td = book.int_id
             td
               = image_tag "#{book.cover}", style: 'height:80px;width:50px;margin-bottom:20px;'
             /td = book.content_name
@@ -45,7 +46,6 @@ h1 Listing books
             /td = book.images_urls
             td = book.year
             /td = book.images
-            /td = book.int_id
             /td = book.category
             /td = book.genres
             td = book.copyright
@@ -60,8 +60,8 @@ h1 Listing books
             /td = book.authors
             td = book.language
             /td = book.countries
-            td = book.release_date.strftime("%d %b %Y")
-            /td = book.author
+            td = book.release_date&.strftime("%d %b %Y")
+            td = book.author
             /td = book.content_cleaned
             /td = book.classes
             /td = book.content_available

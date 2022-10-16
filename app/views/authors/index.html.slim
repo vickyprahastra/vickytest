@@ -4,36 +4,36 @@ h1 Listing authors
   table.table
     thead
       tr
+          th ID
           th Name
-          th Countries
+          /th Countries
           th Gender
           th Wikipedia
-          th N books
+          /th N books
           th Summary
-          th Born
-          th Books
-          th Int
-          th Died
+          th style="width:200px;" Books
+          th style="width:150px;" Born
+          th style="width:150px;" Died
           th
-        th
-        th
+          th
+          th
 
     tbody
       - @authors.each do |author|
         tr
-            td = author.name
-            td = author.countries
-            td = author.gender
-            td = author.wikipedia
-            td = author.n_books
-            td = author.summary
-            td = author.born
-            td = author.books
             td = author.int_id
-            td = author.died
+            td = author.name
+            /td = author.countries
+            td = author.gender
+            td = author.wikipedia&.dig('url')
+            /td = author.n_books
+            td = raw (excerpt(author.summary, '', radius: 150))
+            td = author.books
+            td = author.born&.strftime("%d %b %Y")
+            td = author.died&.strftime("%d %b %Y")
             td = link_to 'Show', author
-          td = link_to 'Edit', edit_author_path(author)
-          td = link_to 'Destroy', author, data: { confirm: 'Are you sure?' }, method: :delete
+            td = link_to 'Edit', edit_author_path(author)
+            td = link_to 'Destroy', author, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
