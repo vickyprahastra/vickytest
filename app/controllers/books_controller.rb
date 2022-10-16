@@ -47,6 +47,13 @@ class BooksController < ApplicationController
     end
   end
 
+  def retrieve
+    book = Book.find_by(int_id: params[:id])
+    return redirect_to books_path unless book
+
+    redirect_to book_path(book.id)
+  end
+
   # DELETE /books/1 or /books/1.json
   def destroy
     @book.destroy

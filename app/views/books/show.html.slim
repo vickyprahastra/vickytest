@@ -71,7 +71,7 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Authors
   .col-sm-10
-    .form-control readonly='readonly' = @book.authors
+    .form-control readonly='readonly' = raw(@book.authors&.map{|b| raw(link_to b, retrieve_authors_url(id: b)) }.join(', ') + ".")
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Language
   .col-sm-10
@@ -87,7 +87,7 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Author
   .col-sm-10
-    .form-control readonly='readonly' = @book.author
+    .form-control readonly='readonly' = link_to @book.author, retrieve_authors_url(id: @book.author)
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Cover
   .col-sm-10

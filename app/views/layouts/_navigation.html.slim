@@ -8,12 +8,10 @@
           ul.navbar-nav.ms-auto.me-4.my-3.my-lg-0
             li.nav-item
               a.nav-link.me-lg-3 href="#{root_path}"  Home Page
-            li.nav-item
-              - if user_signed_in? and action_name != 'index'
+            - if user_signed_in?
+              li.nav-item
                 = link_to 'Books', books_path, class: 'nav-link me-lg-3'
-            li.nav-item
-              - if user_signed_in? and action_name != 'index'
+              li.nav-item
                 = link_to 'Authors', authors_path, class: 'nav-link me-lg-3'
-            li.nav-item
-              - if user_signed_in?
+              li.nav-item
                 = link_to 'Logout', destroy_user_session_path(:authenticity_token => form_authenticity_token()), method: :delete, class: 'nav-link me-lg-3'

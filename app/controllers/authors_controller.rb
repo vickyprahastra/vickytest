@@ -47,6 +47,13 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def retrieve
+    author = Author.find_by(int_id: params[:id])
+    return redirect_to authors_path unless author
+
+    redirect_to author_path(author.id)
+  end
+
   # DELETE /authors/1 or /authors/1.json
   def destroy
     @author.destroy

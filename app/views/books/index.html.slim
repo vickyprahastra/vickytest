@@ -22,7 +22,7 @@ h1 Listing books
             th Description
             /th Loc class
             /th Gutenberg
-            /th Authors
+            th Authors
             th Language
             /th Countries
             th style="width:150px;" Release date
@@ -57,11 +57,11 @@ h1 Listing books
             td = raw (excerpt(book.description, '', radius: 30))
             /td = book.loc_class
             /td = book.gutenberg
-            /td = book.authors
+            td = raw(book.authors&.map{|b| raw(link_to b, retrieve_authors_url(id: b)) }.join(', '))
             td = book.language
             /td = book.countries
             td = book.release_date&.strftime("%d %b %Y")
-            td = book.author
+            td = link_to book.author, retrieve_authors_url(id: book.author)
             /td = book.content_cleaned
             /td = book.classes
             /td = book.content_available

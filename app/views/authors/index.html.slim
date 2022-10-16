@@ -28,7 +28,7 @@ h1 Listing authors
             td = author.wikipedia&.dig('url')
             /td = author.n_books
             td = raw (excerpt(author.summary, '', radius: 150))
-            td = author.books
+            td = raw(author.books&.map{|b| raw(link_to b, retrieve_books_url(id: b)) }.join(', '))
             td = author.born&.strftime("%d %b %Y")
             td = author.died&.strftime("%d %b %Y")
             td = link_to 'Show', author
