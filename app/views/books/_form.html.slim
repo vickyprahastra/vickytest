@@ -16,9 +16,6 @@
     = f.label :year, class: 'form-label'
     = f.number_field :year, class: 'form-control'
   .field.mb-3
-    = f.label :id, class: 'form-label'
-    = f.number_field :int_id, class: 'form-control'
-  .field.mb-3
     = f.label :category, class: 'form-label'
     = f.text_field :category, class: 'form-control'
   .field.mb-3
@@ -85,7 +82,7 @@
   .field.mb-3
     = f.label :images_urls, class: 'form-label'
     .col-sm-12
-      .form-control readonly='readonly' = excerpt(@book.images_urls, '', radius: 600)
+      .form-control readonly='readonly' = @book.images_urls
     /= f.text_field :images_urls, class: 'form-control'
   .field.mb-3
     = f.label :gutenberg, class: 'form-label'
@@ -102,5 +99,8 @@
     .col-sm-12
       .form-control readonly='readonly' = link_to @book.goodreads.dig('url'), @book.goodreads.dig('url')
     /= f.text_field :goodreads, class: 'form-control', readonly: true
+  .field.mb-3
+    = f.label :id, class: 'form-label'
+    = f.number_field :int_id, class: 'form-control', readonly: true
   .actions.mb-3
     = f.submit 'Submit', class: 'btn btn-primary float-end'

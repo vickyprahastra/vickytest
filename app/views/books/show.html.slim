@@ -1,6 +1,10 @@
 p#notice = notice
 
 .field.mb-3.row
+  strong.col-form-label.col-sm-2 Cover
+  .col-sm-10
+    .form-control readonly='readonly' = image_tag "#{@book.cover}", style: 'height:80px;width:50px;margin-bottom:20px;'
+.field.mb-3.row
   strong.col-form-label.col-sm-2 Content name
   .col-sm-10
     .form-control readonly='readonly' = @book.content_name
@@ -88,10 +92,6 @@ p#notice = notice
   strong.col-form-label.col-sm-2 Author
   .col-sm-10
     .form-control readonly='readonly' = link_to @book.author, retrieve_authors_url(id: @book.author)
-.field.mb-3.row
-  strong.col-form-label.col-sm-2 Cover
-  .col-sm-10
-    .form-control readonly='readonly' = @book.cover
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Content cleaned
   .col-sm-10
