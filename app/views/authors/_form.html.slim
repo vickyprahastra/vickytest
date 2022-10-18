@@ -28,7 +28,9 @@
       = f.datetime_select :born, class: 'form-control'
   .field.mb-3
     = f.label :books, class: 'form-label'
-    = f.text_field :books, value: raw(f.object.books), class: 'form-control'
+    /= f.text_field :books, value: raw(f.object.books), class: 'form-control'
+    .col-sm-12
+      .form-control readonly='readonly' = @author.books
   .field.mb-3
     = f.label :died, class: 'form-label'
     div

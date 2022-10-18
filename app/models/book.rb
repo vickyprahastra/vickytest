@@ -5,6 +5,8 @@ class Book < ApplicationRecord
     found: :boolean
 
   def parse_json
+    return unless self.authors
+
     update_columns(authors: JSON.parse(self.authors))
   end
 end

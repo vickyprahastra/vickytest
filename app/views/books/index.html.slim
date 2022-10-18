@@ -59,6 +59,7 @@ h1 Listing books
             /th Countries
             th style="width:150px;" Release date
             th Author
+            th Pages
             /th Content cleaned
             /th Classes
             /th Content available
@@ -93,6 +94,7 @@ h1 Listing books
               /td = book.countries
               td = book.release_date&.strftime("%d %b %Y")
               td = link_to book.author, retrieve_authors_url(id: book.author)
+              td = book.pages
               /td = book.content_cleaned
               /td = book.classes
               /td = book.content_available

@@ -33,12 +33,16 @@ ActiveRecord::Schema.define(version: 2022_10_16_110327) do
 
   create_table "books", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "content_name"
+    t.string "isbn"
+    t.string "original_title"
+    t.integer "year"
     t.string "author_name"
     t.jsonb "images_urls", default: []
-    t.integer "year"
+    t.string "language_code"
     t.jsonb "images", default: []
     t.integer "int_id"
     t.string "category"
+    t.string "plot"
     t.jsonb "genres", default: []
     t.string "copyright"
     t.string "title"
@@ -50,11 +54,14 @@ ActiveRecord::Schema.define(version: 2022_10_16_110327) do
     t.string "loc_class"
     t.jsonb "gutenberg", default: {}
     t.jsonb "authors", default: []
+    t.integer "pages", default: 0
     t.string "language"
+    t.string "isbn13"
     t.jsonb "countries", default: []
     t.datetime "release_date"
     t.integer "author"
     t.string "cover"
+    t.string "summary"
     t.boolean "content_cleaned", default: false
     t.jsonb "classes", default: []
     t.boolean "content_available", default: false
