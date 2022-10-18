@@ -2,24 +2,24 @@
 
 one:
   name: MyString
-  countries: 
+  countries:
   gender: 1
-  wikipedia: 
+  wikipedia:
   n_books: 1
   summary: MyString
   born: 2022-10-16 18:03:27
-  books: 
+  books:
   int_id: 1
   died: 2022-10-16 18:03:27
-
-two:
-  name: MyString
-  countries: 
-  gender: 1
-  wikipedia: 
-  n_books: 1
-  summary: MyString
-  born: 2022-10-16 18:03:27
-  books: 
-  int_id: 1
-  died: 2022-10-16 18:03:27
+#
+# two:
+#   name: MyString
+#   countries:
+#   gender: 1
+#   wikipedia:
+#   n_books: 1
+#   summary: MyString
+#   born: 2022-10-16 18:03:27
+#   books:
+#   int_id: 2
+#   died: 2022-10-16 18:03:27

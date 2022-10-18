@@ -15,14 +15,6 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create author" do
-    assert_difference('Author.count') do
-      post authors_url, params: { author: { books: @author.books, born: @author.born, countries: @author.countries, died: @author.died, gender: @author.gender, int_id: @author.int_id, n_books: @author.n_books, name: @author.name, summary: @author.summary, wikipedia: @author.wikipedia } }
-    end
-
-    assert_redirected_to author_url(Author.last)
-  end
-
   test "should show author" do
     get author_url(@author)
     assert_response :success

@@ -55,7 +55,7 @@
           td = raw (excerpt(book.description, '', radius: 30))
           /td = book.loc_class
           /td = book.gutenberg
-          td = raw(book.authors&.map{|b| raw(link_to b, retrieve_authors_url(id: b)) }.join(', '))
+          td = raw(book.authors&.map{|b| raw(link_to b, retrieve_authors_url(id: b)) }&.join(', '))
           td = book.language
           /td = book.countries
           td = book.release_date&.strftime("%d %b %Y")

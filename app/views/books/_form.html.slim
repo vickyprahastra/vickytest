@@ -87,17 +87,17 @@
   .field.mb-3
     = f.label :gutenberg, class: 'form-label'
     .col-sm-12
-      .form-control readonly='readonly' = link_to @book.gutenberg.dig('url'), @book.gutenberg.dig('url')
+      .form-control readonly='readonly' = link_to @book.gutenberg&.dig('url'), @book.gutenberg&.dig('url')
     /= f.text_field :gutenberg, class: 'form-control', readonly: true
   .field.mb-3
     = f.label :wikipedia, class: 'form-label'
     .col-sm-12
-      .form-control readonly='readonly' = link_to @book.wikipedia.dig('url'), @book.wikipedia.dig('url')
+      .form-control readonly='readonly' = link_to @book.wikipedia&.dig('url'), @book.wikipedia&.dig('url')
     /= f.text_field :wikipedia, class: 'form-control', readonly: true
   .field.mb-3
     = f.label :goodreads, class: 'form-label'
     .col-sm-12
-      .form-control readonly='readonly' = link_to @book.goodreads.dig('url'), @book.goodreads.dig('url')
+      .form-control readonly='readonly' = link_to @book.goodreads&.dig('url'), @book.goodreads&.dig('url')
     /= f.text_field :goodreads, class: 'form-control', readonly: true
   .field.mb-3
     = f.label :id, class: 'form-label'

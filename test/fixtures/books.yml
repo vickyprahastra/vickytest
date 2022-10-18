@@ -1,59 +1,57 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content_name: MyString
+  content_name: MyString1
   author_name: MyString
-  images_urls: 
+  images_urls:
   year: 1
-  images: 
+  images:
   int_id: 1
   category: MyString
-  genres: 
+  genres:
   copyright: MyString
   title: MyString
-  wikipedia: 
+  wikipedia:
   average_rating: 1.5
-  goodreads: 
-  similar_books: 
+  goodreads:
+  similar_books:
   description: MyString
   loc_class: MyString
-  gutenberg: 
-  authors: 
+  gutenberg:
+  authors:
   language: MyString
-  countries: 
+  countries:
   release_date: 2022-10-16 13:36:04
   author: 1
-  cover: MyString
   content_cleaned: false
-  classes: 
+  classes:
   content_available: false
   n_authors: 1
-
-two:
-  content_name: MyString
-  author_name: MyString
-  images_urls: 
-  year: 1
-  images: 
-  int_id: 1
-  category: MyString
-  genres: 
-  copyright: MyString
-  title: MyString
-  wikipedia: 
-  average_rating: 1.5
-  goodreads: 
-  similar_books: 
-  description: MyString
-  loc_class: MyString
-  gutenberg: 
-  authors: 
-  language: MyString
-  countries: 
-  release_date: 2022-10-16 13:36:04
-  author: 1
-  cover: MyString
-  content_cleaned: false
-  classes: 
-  content_available: false
-  n_authors: 1
+#
+# two:
+#   content_name: MyString
+#   author_name: MyString
+#   images_urls:
+#   year: 1
+#   images:
+#   int_id: 2
+#   category: MyString
+#   genres:
+#   copyright: MyString
+#   title: MyString
+#   wikipedia:
+#   average_rating: 1.5
+#   goodreads:
+#   similar_books:
+#   description: MyString
+#   loc_class: MyString
+#   gutenberg:
+#   authors:
+#   language: MyString
+#   countries:
+#   release_date: 2022-10-16 13:36:04
+#   author: 1
+#   content_cleaned: false
+#   classes:
+#   content_available: false
+#   n_authors: 1

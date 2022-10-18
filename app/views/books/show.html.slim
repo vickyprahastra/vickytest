@@ -3,7 +3,8 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Cover
   .col-sm-10
-    .form-control readonly='readonly' = image_tag "#{@book.cover}", style: 'height:80px;width:50px;margin-bottom:20px;'
+    .form-control readonly='readonly'
+      img src="#{@book.cover}" style='height:80px;width:50px;margin-bottom:20px;'
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Content name
   .col-sm-10
@@ -75,7 +76,10 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Authors
   .col-sm-10
-    .form-control readonly='readonly' = raw(@book.authors&.map{|b| raw(link_to b, retrieve_authors_url(id: b)) }.join(', '))
+    - if @book.authors.is_a? String
+      .form-control readonly='readonly' @book.authors
+    - else
+      .form-control readonly='readonly' = raw(@book.authors&.map{|b| raw(link_to b, retrieve_authors_url(id: b)) }&.join(', '))
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Language
   .col-sm-10
