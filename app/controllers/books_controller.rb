@@ -67,11 +67,18 @@ class BooksController < ApplicationController
   def resource
     books = Book.all
 
-    # books = books.where('CAST(author AS TEXT) LIKE ?', "#{params[:author]}") if params[:author].present?
     books = books.where('CAST(author AS TEXT) = ANY(ARRAY[?])', params[:author]) if params[:author].present?
     books = books.where('CAST(year AS TEXT) = ANY(ARRAY[?])', params[:year]) if params[:year].present?
     books = books.where('pages >= ?', params[:min_pages]) if params[:min_pages].present?
     books = books.where('pages <= ?', params[:max_pages]) if params[:max_pages].present?
+
+    if params[:book]
+      given_book = Book.find_by(int_id: params[:book].first.to_i)
+
+      return books unless given_book
+      books = books.where('classes @> ?', given_book.classes.last.to_json)
+      books = books.or(Book.where('authors @> ?', [given_book.author].to_json))
+    end
 
     books
   end

@@ -3,10 +3,37 @@ import 'select2'
 import 'select2/dist/css/select2.css'
 
 window.addEventListener('DOMContentLoaded', () => {
-    $('#filter_by_authors, #filter_by_years, #filter_by_min_pages, #filter_by_max_pages, #filter_by_books').on('select2:select', function (e) {
-        console.log(e.currentTarget.id)
-        console.log(e.params.data)
-        console.log(e)
+    $('#filter_by_authors, #filter_by_years, #filter_by_min_pages, #filter_by_max_pages, #filter_by_books').on('select2:select select2:unselect', function (e) {
+        let data = {}
+
+        if ( $(`#filter_by_authors`).val() != 0 ) {
+            data['author'] = $(`#filter_by_authors`).val();
+        }
+
+        if ( $(`#filter_by_years`).val() != 0 ) {
+            data['year'] = $(`#filter_by_years`).val();
+        }
+
+        if ( $(`#filter_by_min_pages`).val() > 0 ) {
+            data['min_pages'] = $(`#filter_by_min_pages`).val();
+        }
+
+        if ( $(`#filter_by_max_pages`).val() > 0 ) {
+            data['max_pages'] = $(`#filter_by_max_pages`).val();
+        }
+
+        if ( $(`#filter_by_books`).val() != 0 ) {
+            data['book'] = $(`#filter_by_books`).val();
+        }
+
+        $.ajax({
+          method: "GET",
+          url: "/books",
+          data: data
+        })
+        .done(function( msg ) {
+          // console.log("Data request: " + msg );
+        });
     });
 
     $("#filter_by_authors").select2({
@@ -61,7 +88,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     results: $.map(data, function (item) {
                         return {
                             text: item.year,
-                            id: item.int_id
+                            id: item.year
                         }
                     })
                 };
@@ -84,6 +111,7 @@ window.addEventListener('DOMContentLoaded', () => {
     })
 
     $("#filter_by_books").select2({
+        allowClear: true,
         placeholder: "Book",
         multiple: true,
         tokenSeparators: [',', ' '],
