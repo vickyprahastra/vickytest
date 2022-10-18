@@ -47,7 +47,7 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Wikipedia
   .col-sm-10
-    .form-control readonly='readonly' = link_to @book.wikipedia.dig('url'), @book.wikipedia.dig('url')
+    .form-control readonly='readonly' = link_to @book.wikipedia&.dig('url'), @book.wikipedia&.dig('url') || ''
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Average rating
   .col-sm-10
@@ -55,7 +55,7 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Goodreads
   .col-sm-10
-    .form-control readonly='readonly' = link_to @book.goodreads.dig('url'), @book.goodreads.dig('url')
+    .form-control readonly='readonly' = link_to @book.goodreads&.dig('url'), @book.goodreads&.dig('url') || ''
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Similar books
   .col-sm-10
@@ -71,11 +71,11 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Gutenberg
   .col-sm-10
-    .form-control readonly='readonly' = link_to @book.gutenberg.dig('url'), @book.gutenberg.dig('url')
+    .form-control readonly='readonly' = link_to @book.gutenberg&.dig('url'), @book.gutenberg&.dig('url') || ''
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Authors
   .col-sm-10
-    .form-control readonly='readonly' = raw(@book.authors&.map{|b| raw(link_to b, retrieve_authors_url(id: b)) }.join(', ') + ".")
+    .form-control readonly='readonly' = raw(@book.authors&.map{|b| raw(link_to b, retrieve_authors_url(id: b)) }.join(', '))
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Language
   .col-sm-10

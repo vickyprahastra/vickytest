@@ -31,7 +31,7 @@ p#notice = notice
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Books
   .col-sm-10
-    .form-control readonly='readonly' = raw(@author.books&.map{|b| raw(link_to b, retrieve_books_url(id: b)) }.join(', ') + ".")
+    .form-control readonly='readonly' = raw(@author.books&.map{|b| raw(link_to b, retrieve_books_url(id: b)) }.join(', '))
 .field.mb-3.row
   strong.col-form-label.col-sm-2 Int
   .col-sm-10

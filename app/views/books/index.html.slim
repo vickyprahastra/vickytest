@@ -13,18 +13,18 @@ h1 Listing books
       select#filter_by_years class="form-control" multiple="multiple" style="min-width: 150px;"
 
     .field.mb-3.row
-      strong.col-form-label Rating
+      strong.col-form-label Page
       .col-6
         strong.col-form-label Min
         select#filter_by_min_pages class="form-control" style="min-width: auto;"
           option
-          - 0.upto(7) do |i|
+          - 0.upto(723) do |i|
             option #{i}
       .col-6
         strong.col-form-label Max
         select#filter_by_max_pages class="form-control" style="min-width: auto;"
           option
-          - 0.upto(7) do |i|
+          - 0.upto(723) do |i|
             option #{i}
 
     .field.mb-3.row

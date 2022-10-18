@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    @books = Book.all.order(:created_at).page(params[:page]).per(10)
+    @books = resource.order(:created_at).page(params[:page]).per(10)
   end
 
   # GET /books/1 or /books/1.json
@@ -64,13 +64,26 @@ class BooksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_book
-      @book = Book.find(params[:id])
-    end
+  def resource
+    books = Book.all
 
-    # Only allow a list of trusted parameters through.
-    def book_params
-      params.require(:book).permit(:content_name, :author_name, :images_urls, :year, :images, :int_id, :category, :genres, :copyright, :title, :wikipedia, :average_rating, :goodreads, :similar_books, :description, :loc_class, :gutenberg, :authors, :language, :countries, :release_date, :author, :cover, :content_cleaned, :classes, :content_available, :n_authors)
-    end
+    # books = books.where('CAST(author AS TEXT) LIKE ?', "#{params[:author]}") if params[:author].present?
+    books = books.where('CAST(author AS TEXT) = ANY(ARRAY[?])', params[:author]) if params[:author].present?
+    books = books.where('CAST(year AS TEXT) = ANY(ARRAY[?])', params[:year]) if params[:year].present?
+    books = books.where('pages >= ?', params[:min_pages]) if params[:min_pages].present?
+    books = books.where('pages <= ?', params[:max_pages]) if params[:max_pages].present?
+
+    books
+  end
+
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_book
+    @book = Book.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def book_params
+    params.require(:book).permit(:content_name, :author_name, :images_urls, :year, :images, :int_id, :category, :genres, :copyright, :title, :wikipedia, :average_rating, :goodreads, :similar_books, :description, :loc_class, :gutenberg, :authors, :language, :countries, :release_date, :author, :cover, :content_cleaned, :classes, :content_available, :n_authors)
+  end
 end
