@@ -38,7 +38,7 @@
         tr
           td = book.int_id
           td
-            = image_tag "#{book.cover}", style: 'height:80px;width:50px;margin-bottom:20px;'
+            img src="#{book.cover}" style='height:80px;width:50px;margin-bottom:20px;'
           /td = book.content_name
           td = book.author_name
           /td = book.images_urls
@@ -55,7 +55,10 @@
           td = raw (excerpt(book.description, '', radius: 30))
           /td = book.loc_class
           /td = book.gutenberg
-          td = raw(book.authors&.map{|b| raw(link_to b, retrieve_authors_url(id: b)) }&.join(', '))
+          - if book.authors.is_a? Array
+            td = raw(book.authors&.map{|b| raw(link_to b, retrieve_authors_url(id: b)) }&.join(', '))
+          - else
+            td = book.authors
           td = book.language
           /td = book.countries
           td = book.release_date&.strftime("%d %b %Y")
