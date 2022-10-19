@@ -1,5 +1,4 @@
 class Author < ApplicationRecord
-  has_many :books
   enum gender: { n: 0, m: 1, f: 2 }
 
   after_save :parse_json
