@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
+  belongs_to :user
   after_save :parse_json
   after_create :create_id
 
