@@ -37,9 +37,12 @@
       = f.datetime_select :died, class: 'form-control'
   .field.mb-3
     = f.label :wikipedia, class: 'form-label'
-    /= f.text_field :wikipedia, class: 'form-control', readonly: true
-    .col-sm-12
-      .form-control readonly='readonly' = @author.wikipedia
+    = f.fields_for :wikipedia, OpenStruct.new(@author.wikipedia) do |ff|
+      .row
+        .col-10
+          = ff.text_field :url, class: 'form-control'
+        .col-2
+          = ff.check_box :found, class: 'form-check-input'
   .field.mb-3
     = f.label :ID, class: 'form-label'
     = f.number_field :int_id, class: 'form-control', readonly: true
