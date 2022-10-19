@@ -28,9 +28,7 @@
       = f.datetime_select :born, class: 'form-control'
   .field.mb-3
     = f.label :books, class: 'form-label'
-    /= f.text_field :books, value: raw(f.object.books), class: 'form-control'
-    .col-sm-12
-      .form-control readonly='readonly' = @author.books
+    = f.text_field :books, value: raw(f.object.books), class: 'form-control'
   .field.mb-3
     = f.label :died, class: 'form-label'
     div
@@ -43,8 +41,5 @@
           = ff.text_field :url, class: 'form-control'
         .col-2
           = ff.check_box :found, class: 'form-check-input'
-  .field.mb-3
-    = f.label :ID, class: 'form-label'
-    = f.number_field :int_id, class: 'form-control', readonly: true
   .actions.mb-3
     = f.submit 'Submit', class: 'btn btn-primary float-end'
