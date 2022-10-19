@@ -11,3 +11,4 @@ Run server
 
 1. run server `rails server`
 2. in project directory run `bundle exec bin/webpack-dev-server`
+3. by default project run on port 3000, go to `http://localhost:3000` on browser
